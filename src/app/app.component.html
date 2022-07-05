@@ -1,9 +1,9 @@
 <div class="squads-balancer">
     <app-squad-selector class="left-squad-selector"></app-squad-selector>
-    <div id="squads-comparator" class="squads-comparator">
-        <div id="squads-stats">
-            <app-squad-stats class="left-squad-stats"></app-squad-stats>
-            <app-squad-stats class="rigt-squad-stats"></app-squad-stats>
+    <div class="squads-comparator">
+        <div class="squad-stats">
+            <app-squad-stats [squad]="leftSelectedSquad" class="left-squad-stats"></app-squad-stats>
+            <app-squad-stats [squad]="rightSelectedSquad" class="rigt-squad-stats"></app-squad-stats>
         </div>
         <app-fight-results></app-fight-results>
     </div>

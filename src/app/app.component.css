@@ -4,6 +4,7 @@
 }
 
 .squads-comparator {
+    width: 800px;
     border-left: 1px solid gray;
     border-right: 1px solid gray;
 }
@@ -22,6 +23,10 @@
 
 .right-squad-selector ::ng-deep .left-delete {
     display: none;
+}
+
+.squad-stats {
+    display: flex;
 }
 
 .left-squad-stats {

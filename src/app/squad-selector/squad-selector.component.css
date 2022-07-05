@@ -1,4 +1,6 @@
 .squad-row {
+    height: 30px;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
 }

@@ -1,4 +1,12 @@
-.squad-name,
-.squad-stats {
+.squad-name {
+    height: 50px;
+}
+
+.row {
+    display: flex;
     width: 400px;
+}
+
+mat-form-field {
+    width: 100px;
 }
