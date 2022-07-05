@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Squad } from '../squad';
+import { SQUADS } from '../mock-squads';
+
 @Component({
   selector: 'app-squad-selector',
   templateUrl: './squad-selector.component.html',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SquadSelectorComponent implements OnInit {
 
-  constructor() { }
+  squads: Squad[] = [];
+
+  constructor() {}
 
   ngOnInit(): void {
+    this.getSquads();
+  }
+
+  getSquads() {
+    this.squads = SQUADS;
   }
 
 }

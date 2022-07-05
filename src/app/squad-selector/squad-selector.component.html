@@ -1,4 +1,6 @@
-<div id="squad_row">
-    <span id="squad_name"></span>
-    <button id="delete_button"></button>
+<h3>Squads</h3>
+<div *ngFor="let squad of squads" id="squad-row" class="squad-row">
+    <button id="delete_button" class="left-delete">x</button>
+    <span id="squad_name">{{squad.name}}</span>
+    <button id="delete_button" class="right-delete">x</button>
 </div>

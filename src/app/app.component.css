@@ -7,3 +7,27 @@
     border-left: 1px solid gray;
     border-right: 1px solid gray;
 }
+
+.left-squad-selector {
+    text-align: end;
+}
+
+.right-squad-selector {
+    text-align: start;
+}
+
+.left-squad-selector ::ng-deep .right-delete {
+    display: none;
+}
+
+.right-squad-selector ::ng-deep .left-delete {
+    display: none;
+}
+
+.left-squad-stats {
+    border-right: 1px solid gray;
+}
+
+.right-squad-stats {
+    border-left: 1px solid gray;
+}
