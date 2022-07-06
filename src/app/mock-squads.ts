@@ -5,9 +5,9 @@ export const SQUADS: Squad[] = [
         name: 'militia',
 
         equipmentValue: 10,
-        equipmentColor: '#CD7F32',
+        equipmentColor: "bronze",//'#CD7F32'
 
-        weaponColor: '#C0C0C0',
+        weaponColor: "silver",//'#C0C0C0'
         weaponInitiative: 3,
         isShieldbreaker: false,
 
@@ -29,15 +29,15 @@ export const SQUADS: Squad[] = [
         totalShields: 2,
         commonShields: 1,
         missileBlockShields: 1,
-        shieldsColor: '#CD7F32'
+        shieldsColor: "bronze" //'#CD7F32'
     },
     {
         name: 'mercenaries',
 
         equipmentValue: 17,
-        equipmentColor: '#C0C0C0',
+        equipmentColor: "silver",//'#C0C0C0'
 
-        weaponColor: '#C0C0C0',
+        weaponColor: "silver",//'#C0C0C0'
         weaponInitiative: 3,
         isShieldbreaker: false,
 
@@ -59,15 +59,15 @@ export const SQUADS: Squad[] = [
         totalShields: 2,
         commonShields: 1,
         missileBlockShields: 1,
-        shieldsColor: '#C0C0C0'
+        shieldsColor: "silver" //'#C0C0C0'
     },
     {
         name: 'nobles',
 
         equipmentValue: 27,
-        equipmentColor: '#FFD700',
+        equipmentColor: "golden",//'#FFD700'
 
-        weaponColor: '#FFD700',
+        weaponColor: "golden",//'#FFD700'
         weaponInitiative: 2,
         isShieldbreaker: false,
 
@@ -89,6 +89,6 @@ export const SQUADS: Squad[] = [
         totalShields: 1,
         commonShields: 1,
         missileBlockShields: 0,
-        shieldsColor: '#FFD700'
+        shieldsColor: "golden" //'#FFD700'
     }
 ];

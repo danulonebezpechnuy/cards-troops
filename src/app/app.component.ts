@@ -10,4 +10,13 @@ import { Squad } from './squad';
 export class AppComponent {
   leftSelectedSquad?: Squad;
   rightSelectedSquad?: Squad;
+
+  onLeftSelected( squad: Squad ) {
+    this.leftSelectedSquad = squad;
+  }
+
+  onRightSelected( squad: Squad ) {
+    this.rightSelectedSquad = squad;
+  }
+
 }

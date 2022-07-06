@@ -1,6 +1,6 @@
 <mat-form-field appearance="fill" class="color-selector">
     <mat-label>color</mat-label>
-    <mat-select>
+    <mat-select name="color-selector" [(ngModel)]="selectedColor">
         <mat-option value="bronze">bronze</mat-option>
         <mat-option value="silver">silver</mat-option>
         <mat-option value="golden">golden</mat-option>

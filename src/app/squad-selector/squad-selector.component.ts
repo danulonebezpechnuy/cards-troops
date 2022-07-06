@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { Squad } from '../squad';
 import { SQUADS } from '../mock-squads';
@@ -10,6 +10,7 @@ import { SQUADS } from '../mock-squads';
 })
 export class SquadSelectorComponent implements OnInit {
 
+  @Output() selectedSquad = new EventEmitter<Squad>();
   squads: Squad[] = [];
 
   constructor() {}
@@ -20,6 +21,11 @@ export class SquadSelectorComponent implements OnInit {
 
   getSquads() {
     this.squads = SQUADS;
+  }
+
+  select( squad: Squad ) {
+    console.log(`squad selected ${squad.name}`);
+    this.selectedSquad.emit( squad );
   }
 
 }

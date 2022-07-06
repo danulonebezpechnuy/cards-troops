@@ -1,66 +1,64 @@
-<div class="squad-name">
-    <span *ngIf="squad">{{squad.name}}</span>
-</div>
 <form *ngIf="squad" class="stats">
+    <div class="row squad-name">{{squad.name}}</div>
     <div class="row equipment-row">
-        <app-color-selector></app-color-selector>
+        <app-color-selector [selectedColor]="squad.equipmentColor"></app-color-selector>
         <mat-form-field>
             <mat-label>equipment</mat-label>
-            <input matInput type="number" placeholder="0" [(ngModel)]="squad.equipmentValue">
+            <input matInput name="equipment-value" type="number" placeholder="0" [(ngModel)]="squad.equipmentValue">
         </mat-form-field>
     </div>
     <div class="row weapon-row">
-        <app-color-selector></app-color-selector>
+        <app-color-selector [selectedColor]="squad.weaponColor"></app-color-selector>
         <mat-form-field>
             <mat-label>initiative</mat-label>
-            <input matInput type="number" placeholder="0" [(ngModel)]="squad.weaponInitiative">
+            <input matInput name="initiative" type="number" placeholder="0" [(ngModel)]="squad.weaponInitiative">
         </mat-form-field>
-        <mat-checkbox [(ngModel)]="squad.isShieldbreaker">shieldbraker</mat-checkbox>
+        <mat-checkbox name="shieldbraker" [(ngModel)]="squad.isShieldbreaker">shieldbraker</mat-checkbox>
     </div>
     <div class="row missile-weapon-row">
-        <app-color-selector></app-color-selector>
+        <app-color-selector [selectedColor]="squad.missileWeaponColor"></app-color-selector>
         <mat-form-field>
             <mat-label>range</mat-label>
-            <input matInput type="number" placeholder="0" [(ngModel)]="squad.missileWeaponRange">
+            <input matInput name="range" type="number" placeholder="0" [(ngModel)]="squad.missileWeaponRange">
         </mat-form-field>
     </div>
     <mat-form-field>
         <mat-label>cohesion</mat-label>
-        <input matInput type="number" placeholder="0" [(ngModel)]="squad.cohesion">
+        <input matInput name="cohesion" type="number" placeholder="0" [(ngModel)]="squad.cohesion">
     </mat-form-field>
     <mat-form-field>
         <mat-label>expirience</mat-label>
-        <input matInput type="number" placeholder="0" [(ngModel)]="squad.expirience">
+        <input matInput name="expirience" type="number" placeholder="0" [(ngModel)]="squad.expirience">
     </mat-form-field>
     <mat-form-field>
         <mat-label>health</mat-label>
-        <input matInput type="number" placeholder="0" [(ngModel)]="squad.health">
+        <input matInput name="health" type="number" placeholder="0" [(ngModel)]="squad.health">
     </mat-form-field>
     <mat-form-field>
         <mat-label>fatigue</mat-label>
-        <input matInput type="number" placeholder="0" [(ngModel)]="squad.fatigue">
+        <input matInput name="fatigue" type="number" placeholder="0" [(ngModel)]="squad.fatigue">
     </mat-form-field>
     <mat-form-field>
         <mat-label>will</mat-label>
-        <input matInput type="number" placeholder="0" [(ngModel)]="squad.will">
+        <input matInput name="will" type="number" placeholder="0" [(ngModel)]="squad.will">
     </mat-form-field>
     <mat-form-field>
         <mat-label>discipline</mat-label>
-        <input matInput type="number" placeholder="0" [(ngModel)]="squad.discipline">
+        <input matInput name="discipline" type="number" placeholder="0" [(ngModel)]="squad.discipline">
     </mat-form-field>
     <div class="shields-row">
-        <app-color-selector></app-color-selector>
+        <app-color-selector [selectedColor]="squad.shieldsColor"></app-color-selector>
         <mat-form-field>
             <mat-label>total</mat-label>
-            <input matInput type="number" placeholder="0" [(ngModel)]="squad.totalShields">
+            <input matInput name="total" type="number" placeholder="0" [(ngModel)]="squad.totalShields">
         </mat-form-field>
         <mat-form-field>
             <mat-label>common</mat-label>
-            <input matInput type="number" placeholder="0" [(ngModel)]="squad.commonShields">
+            <input matInput name="common" type="number" placeholder="0" [(ngModel)]="squad.commonShields">
         </mat-form-field>
         <mat-form-field>
             <mat-label>missile</mat-label>
-            <input matInput type="number" placeholder="0" [(ngModel)]="squad.missileBlockShields">
+            <input matInput name="missile" type="number" placeholder="0" [(ngModel)]="squad.missileBlockShields">
         </mat-form-field>
     </div>
 </form>
