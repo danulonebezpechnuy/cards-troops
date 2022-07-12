@@ -40,3 +40,10 @@
 .right-squad-stats {
     border-left: 1px solid gray;
 }
+
+.calculate-button {
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+}
