@@ -25,11 +25,10 @@ export interface Squad {
     maxFatigue: number;
     will: number;
     maxWill: number;
-    discipline: number;
-    formationCondition: number;
 
     totalShields: number;
     commonShields: number;
     missileBlockShields: number;
     shieldsColor: string;
+
 };

@@ -23,8 +23,6 @@ export const SQUADS: Squad[] = [
         maxFatigue: 4,
         will: 2,
         maxWill: 2,
-        discipline: 1,
-        formationCondition: 0,
 
         totalShields: 2,
         commonShields: 1,
@@ -53,8 +51,6 @@ export const SQUADS: Squad[] = [
         maxFatigue: 5,
         will: 2,
         maxWill: 2,
-        discipline: 2,
-        formationCondition: 0,
 
         totalShields: 2,
         commonShields: 1,
@@ -83,8 +79,6 @@ export const SQUADS: Squad[] = [
         maxFatigue: 5,
         will: 3,
         maxWill: 3,
-        discipline: 3,
-        formationCondition: 0,
 
         totalShields: 1,
         commonShields: 1,
