@@ -1,3 +1,5 @@
+import { Quality } from "./quality";
+
 export interface Squad {
     /* colors:
         bronze - '#CD7F32'
@@ -9,13 +11,13 @@ export interface Squad {
     name: string;
 
     equipmentValue: number;
-    equipmentColor: string;
+    equipmentQuality: Quality;
 
-    weaponColor: string;
+    weaponQuality: Quality;
     weaponInitiative: number;
     isShieldbreaker: boolean;
 
-    missileWeaponColor: string;
+    missileWeaponQuality: Quality;
     missileWeaponRange: number;
 
     cohesion: number;
@@ -31,6 +33,6 @@ export interface Squad {
     totalShields: number;
     commonShields: number;
     missileBlockShields: number;
-    shieldsColor: string;
+    shieldsQuality: Quality;
 
 };

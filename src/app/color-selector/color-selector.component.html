@@ -1,8 +1,9 @@
 <mat-form-field appearance="fill" class="color-selector">
-    <mat-label>color</mat-label>
-    <mat-select name="color-selector" [(ngModel)]="selectedColor">
-        <mat-option value="bronze">bronze</mat-option>
-        <mat-option value="silver">silver</mat-option>
-        <mat-option value="golden">golden</mat-option>
+    <mat-label>quality</mat-label>
+    <mat-select [(ngModel)]="quality">
+        <mat-option *ngFor="let key of qualityKeys" [value]="key">{{qualities[key]}}</mat-option>
+        <!-- <mat-option value="qualities.BRONZE">Bronze</mat-option>
+        <mat-option value="qualities.SILVER">Silver</mat-option>
+        <mat-option value="qualities.GOLDEN">Golden</mat-option> -->
     </mat-select>
 </mat-form-field>

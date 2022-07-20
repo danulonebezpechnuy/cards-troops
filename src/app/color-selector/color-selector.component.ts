@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Quality } from '../quality';
 
 @Component({
   selector: 'app-color-selector',
@@ -7,11 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ColorSelectorComponent implements OnInit {
 
-  @Input() selectedColor?: string;
+  quality?: number;
+  qualityKeys: number[];
+  qualities = Quality;
 
-  constructor() {}
-
-  ngOnInit(): void {
+  @Input() public set selectedQuality(value: Quality) {
+    this.quality = value;
   }
+
+  constructor() {
+    this.qualityKeys = Object.keys(this.qualities)
+        .filter(key => !isNaN(Number(key)))
+        .map(Number);
+  }
+
+  ngOnInit(): void {}
 
 }

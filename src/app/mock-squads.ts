@@ -1,3 +1,4 @@
+import { Quality } from './quality';
 import { Squad } from './squad';
 
 export const SQUADS: Squad[] = [
@@ -7,13 +8,13 @@ export const SQUADS: Squad[] = [
         name: 'militia',
 
         equipmentValue: 10,
-        equipmentColor: "bronze",//'#CD7F32'
+        equipmentQuality: Quality.BRONZE,
 
-        weaponColor: "silver",//'#C0C0C0'
+        weaponQuality: Quality.SILVER,
         weaponInitiative: 3,
         isShieldbreaker: false,
 
-        missileWeaponColor: '',
+        missileWeaponQuality: {} as Quality,
         missileWeaponRange: 0,
 
         cohesion: 1,
@@ -29,7 +30,7 @@ export const SQUADS: Squad[] = [
         totalShields: 2,
         commonShields: 1,
         missileBlockShields: 1,
-        shieldsColor: "bronze" //'#CD7F32'
+        shieldsQuality: Quality.BRONZE
     },
     {
         id: 2,
@@ -37,13 +38,13 @@ export const SQUADS: Squad[] = [
         name: 'mercenaries',
 
         equipmentValue: 17,
-        equipmentColor: "silver",//'#C0C0C0'
+        equipmentQuality: Quality.SILVER,
 
-        weaponColor: "silver",//'#C0C0C0'
+        weaponQuality: Quality.SILVER,
         weaponInitiative: 3,
         isShieldbreaker: false,
 
-        missileWeaponColor: '',
+        missileWeaponQuality: {} as Quality,
         missileWeaponRange: 0,
 
         cohesion: 2,
@@ -59,7 +60,7 @@ export const SQUADS: Squad[] = [
         totalShields: 2,
         commonShields: 1,
         missileBlockShields: 1,
-        shieldsColor: "silver" //'#C0C0C0'
+        shieldsQuality: Quality.SILVER
     },
     {
         id: 3,
@@ -67,13 +68,13 @@ export const SQUADS: Squad[] = [
         name: 'nobles',
 
         equipmentValue: 27,
-        equipmentColor: "golden",//'#FFD700'
+        equipmentQuality: Quality.GOLDEN,
 
-        weaponColor: "golden",//'#FFD700'
+        weaponQuality: Quality.GOLDEN,
         weaponInitiative: 2,
         isShieldbreaker: false,
 
-        missileWeaponColor: '',
+        missileWeaponQuality: {} as Quality,
         missileWeaponRange: 0,
 
         cohesion: 3,
@@ -89,6 +90,6 @@ export const SQUADS: Squad[] = [
         totalShields: 1,
         commonShields: 1,
         missileBlockShields: 0,
-        shieldsColor: "golden" //'#FFD700'
+        shieldsQuality: Quality.GOLDEN
     }
 ];

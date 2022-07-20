@@ -1,14 +1,14 @@
 <form *ngIf="squad" class="stats">
     <div class="row squad-name">{{squad.name}}</div>
     <div class="row equipment-row">
-        <app-color-selector [selectedColor]="squad.equipmentColor"></app-color-selector>
+        <app-color-selector [selectedQuality]="squad.equipmentQuality"></app-color-selector>
         <mat-form-field>
             <mat-label>equipment</mat-label>
             <input matInput name="equipment-value" type="number" placeholder="0" [(ngModel)]="squad.equipmentValue">
         </mat-form-field>
     </div>
     <div class="row weapon-row">
-        <app-color-selector [selectedColor]="squad.weaponColor"></app-color-selector>
+        <app-color-selector [selectedQuality]="squad.weaponQuality"></app-color-selector>
         <mat-form-field>
             <mat-label>initiative</mat-label>
             <input matInput name="initiative" type="number" placeholder="0" [(ngModel)]="squad.weaponInitiative">
@@ -16,7 +16,7 @@
         <mat-checkbox name="shieldbraker" [(ngModel)]="squad.isShieldbreaker">shieldbraker</mat-checkbox>
     </div>
     <div class="row missile-weapon-row">
-        <app-color-selector [selectedColor]="squad.missileWeaponColor"></app-color-selector>
+        <app-color-selector [selectedQuality]="squad.missileWeaponQuality"></app-color-selector>
         <mat-form-field>
             <mat-label>range</mat-label>
             <input matInput name="range" type="number" placeholder="0" [(ngModel)]="squad.missileWeaponRange">
@@ -43,7 +43,7 @@
         <input matInput name="will" type="number" placeholder="0" [(ngModel)]="squad.will">
     </mat-form-field>
     <div class="shields-row">
-        <app-color-selector [selectedColor]="squad.shieldsColor"></app-color-selector>
+        <app-color-selector [selectedQuality]="squad.shieldsQuality"></app-color-selector>
         <mat-form-field>
             <mat-label>total</mat-label>
             <input matInput name="total" type="number" placeholder="0" [(ngModel)]="squad.totalShields">
