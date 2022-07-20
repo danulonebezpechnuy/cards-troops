@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Pair } from './pair';
 
 import { Squad } from './squad';
 
@@ -8,15 +9,15 @@ import { Squad } from './squad';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  leftSelectedSquad?: Squad;
-  rightSelectedSquad?: Squad;
+
+  selectedSquads = {} as Pair<Squad>;
 
   onLeftSelected( squad: Squad ) {
-    this.leftSelectedSquad = squad;
+    this.selectedSquads.left = squad;
   }
 
   onRightSelected( squad: Squad ) {
-    this.rightSelectedSquad = squad;
+    this.selectedSquads.right = squad;
   }
 
 }

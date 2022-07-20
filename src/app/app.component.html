@@ -2,8 +2,8 @@
     <app-squad-selector class="left-squad-selector" (selectedSquad)="onLeftSelected($event)"></app-squad-selector>
     <div class="squads-comparator">
         <div class="squad-stats">
-            <app-squad-stats [squad]="leftSelectedSquad" class="left-squad-stats"></app-squad-stats>
-            <app-squad-stats [squad]="rightSelectedSquad" class="rigt-squad-stats"></app-squad-stats>
+            <app-squad-stats [squad]="selectedSquads.left" class="left-squad-stats"></app-squad-stats>
+            <app-squad-stats [squad]="selectedSquads.right" class="rigt-squad-stats"></app-squad-stats>
         </div>
         <button class="calculate-button">calculate</button>
         <app-fight-results></app-fight-results>

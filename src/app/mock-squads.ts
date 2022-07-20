@@ -2,6 +2,8 @@ import { Squad } from './squad';
 
 export const SQUADS: Squad[] = [
     {
+        id: 1,
+
         name: 'militia',
 
         equipmentValue: 10,
@@ -30,6 +32,8 @@ export const SQUADS: Squad[] = [
         shieldsColor: "bronze" //'#CD7F32'
     },
     {
+        id: 2,
+
         name: 'mercenaries',
 
         equipmentValue: 17,
@@ -58,6 +62,8 @@ export const SQUADS: Squad[] = [
         shieldsColor: "silver" //'#C0C0C0'
     },
     {
+        id: 3,
+
         name: 'nobles',
 
         equipmentValue: 27,

@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { Squad } from '../squad';
 import { SQUADS } from '../mock-squads';
+import { SquadService } from '../squad.service';
 
 @Component({
   selector: 'app-squad-selector',
@@ -13,14 +14,17 @@ export class SquadSelectorComponent implements OnInit {
   @Output() selectedSquad = new EventEmitter<Squad>();
   squads: Squad[] = [];
 
-  constructor() {}
+  constructor(
+    private squadService: SquadService
+  ) {}
 
   ngOnInit(): void {
     this.getSquads();
   }
 
   getSquads() {
-    this.squads = SQUADS;
+    this.squadService.getSquads()
+      .subscribe(squads => this.squads = squads);
   }
 
   select( squad: Squad ) {

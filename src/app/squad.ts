@@ -4,6 +4,8 @@ export interface Squad {
         silver - '#C0C0C0'
         golden - '#FFD700'
     */
+    id: number;
+
     name: string;
 
     equipmentValue: number;
