@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Pair } from './pair';
 
 import { Squad } from './squad';
+import { SquadService } from './squad.service';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,16 @@ export class AppComponent {
 
   selectedSquads = {} as Pair<Squad>;
 
-  onLeftSelected( squad: Squad ) {
-    this.selectedSquads.left = squad;
+  constructor(
+    private squadService: SquadService
+  ) {}
+
+  onLeftSelected(squad: Squad) {
+    this.squadService.getSquad(squad.id).subscribe(squad => this.selectedSquads.left = squad);
   }
 
-  onRightSelected( squad: Squad ) {
-    this.selectedSquads.right = squad;
+  onRightSelected(squad: Squad) {
+    this.squadService.getSquad(squad.id).subscribe(squad => this.selectedSquads.right = squad);
   }
 
 }

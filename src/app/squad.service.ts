@@ -24,7 +24,7 @@ export class SquadService {
     return of(this.deepCopy(SQUADS.find( squad => squad.id === id ))!);
   }
 
-  private deepCopy(obj: any): any {
+  deepCopy(obj: any): any {
     var copy;
 
     // Handle the 3 simple types, and null or undefined

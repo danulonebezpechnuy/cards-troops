@@ -37,16 +37,19 @@
     text-align: center;
 }
 
-.header {
+ .header {
     border-bottom: 1px dashed gray;
 }
 
-.left-result div:last-child,
-.right-result div:last-child {
+.left-result div:last-child:not(.header),
+.right-result div:last-child:not(.header) {
     border-bottom: 0;
 }
 
-.left-result .loses div,
+.left-result .damages div{
+    border-left: 1px dashed gray;
+}
+
 .right-result .damages div {
     border-right: 1px dashed gray;
 }

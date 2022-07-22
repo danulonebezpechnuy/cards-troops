@@ -83,7 +83,7 @@ export const SQUADS: Squad[] = [
         health: 4,
         maxHealth: 4,
         fatigue: 0,
-        maxFatigue: 5,
+        maxFatigue: 4,
         will: 3,
         maxWill: 3,
 
