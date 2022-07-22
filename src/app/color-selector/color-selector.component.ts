@@ -8,13 +8,9 @@ import { Quality } from '../quality';
 })
 export class ColorSelectorComponent implements OnInit {
 
-  quality?: number;
+  @Input() selectedQuality?: number;
   qualityKeys: number[];
   qualities = Quality;
-
-  @Input() public set selectedQuality(value: Quality) {
-    this.quality = value;
-  }
 
   constructor() {
     this.qualityKeys = Object.keys(this.qualities)
