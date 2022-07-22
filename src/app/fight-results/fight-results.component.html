@@ -1,0 +1,32 @@
+<button class="calculate-button" (click)="calculate()">calculate</button>
+<div *ngIf="resolvedFight">
+    <div *ngFor="let round of resolvedFight.rounds; index as i">
+        <div class="round-header">round {{i+1}}</div>
+        <div class="round-result">
+            <div class="left-result">
+                <div class="loses">
+                    <div class="header">loses</div>
+                    <div class="loss" *ngFor="let loss of round.left.loses">{{loss.value}} {{loss.name}}</div>
+                </div>
+                <div class="damages">
+                    <div class="header">dealt damage</div>
+                    <div class="damage-buf" *ngFor="let buf of round.left.damageBufs">+{{buf.value}} {{buf.name}}</div>
+                    <div class="damage-debuf" *ngFor="let debuf of round.left.damageDebufs">-{{debuf.value}} {{debuf.name}}</div>
+                </div>
+            </div>
+
+            <div class="right-result">
+                <div class="damages">
+                    <div class="header">dealt damage</div>
+                    <div class="damage-buf" *ngFor="let buf of round.right.damageBufs">+{{buf.value}} {{buf.name}}</div>
+                    <div class="damage-debuf" *ngFor="let debuf of round.right.damageDebufs">-{{debuf.value}} {{debuf.name}}</div>
+                </div>
+                <div class="loses">
+                    <div class="header">loses</div>
+                    <div class="loss" *ngFor="let loss of round.right.loses">{{loss.value}} {{loss.name}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="outcome">{{resolvedFight.outcome}}</div>
+</div>

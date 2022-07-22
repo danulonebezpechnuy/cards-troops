@@ -1,0 +1,52 @@
+.calculate-button,
+.round-header,
+.outcome {
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.round-header,
+.outcome {
+    text-align: center;
+    line-height: 50px;
+    border-bottom: 1px solid gray;
+}
+
+.round-result {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid gray;
+}
+
+.left-result,
+.right-result {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-result {
+    border-right: 1px solid gray;
+}
+
+.loses,
+.damages {
+    width: 50%;
+    text-align: center;
+}
+
+.header {
+    border-bottom: 1px dashed gray;
+}
+
+.left-result div:last-child,
+.right-result div:last-child {
+    border-bottom: 0;
+}
+
+.left-result .loses div,
+.right-result .damages div {
+    border-right: 1px dashed gray;
+}

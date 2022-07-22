@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FightResolvingService } from '../fight-resolving/fight-resolving.service';
+import { ResolvedFight } from '../fight-resolving/resolved-fight';
+import { Pair } from '../pair';
+import { Squad } from '../squad';
 
 @Component({
   selector: 'app-fight-results',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FightResultsComponent implements OnInit {
 
-  constructor() { }
+  @Input() selectedSquads?: Pair<Squad>;
+  resolvedFight?: ResolvedFight;
 
-  ngOnInit(): void {
+  constructor(
+    private fightResolvingService: FightResolvingService
+  ) {}
+
+  ngOnInit(): void {}
+
+  calculate(): void {
+    if(this.selectedSquads && this.selectedSquads.left && this.selectedSquads.right) {
+      this.resolvedFight = this.fightResolvingService.resolveFight(this.selectedSquads);
+      console.log(this.resolvedFight);
+    }
   }
 
 }

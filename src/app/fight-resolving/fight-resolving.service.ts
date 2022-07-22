@@ -15,7 +15,7 @@ export class FightResolvingService {
     private squadService: SquadService
   ) {}
 
-  fight(squads: Pair<Squad>): ResolvedFight {
+  resolveFight(squads: Pair<Squad>): ResolvedFight {
     var rounds: Pair<FightResult>[] = [];
     var fightingSquads = {} as Pair<Squad>;
     this.squadService.getSquad(squads.left.id).subscribe(squad => fightingSquads.left = squad);
