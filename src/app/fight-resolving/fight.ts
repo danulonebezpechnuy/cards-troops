@@ -67,7 +67,7 @@ export abstract class Fight {
     }
 
     protected getFatigueDebuf(squad: Squad, squadDamage: number): SquadProperty<number> {
-        return squad.fatigue >= squad.maxFatigue ? {name: "fatigue", value: squadDamage - 1} : {} as SquadProperty<number>;
+        return squad.fatigue >= squad.maxFatigue && squadDamage > 1 ? {name: "fatigue", value: squadDamage - 1} : {} as SquadProperty<number>;
     }
 
     protected getShieldsDebuf(opponent: Squad): SquadProperty<number> {
