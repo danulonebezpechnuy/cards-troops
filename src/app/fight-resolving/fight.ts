@@ -5,6 +5,8 @@ import { FightResult } from "./fight-result";
 
 export abstract class Fight {
 
+    protected fightResults?: Pair<FightResult>
+
     constructor(
         protected squads: Pair<Squad>
     ) {}
@@ -19,13 +21,13 @@ export abstract class Fight {
     }
 
     getResults(): Pair<FightResult> {
-        var fightResults = {
+        this.fightResults = {
             left: this.withDamageModifiers(this.squads.left, this.squads.right),
             right: this.withDamageModifiers(this.squads.right, this.squads.left)
         };
-        fightResults.left.loses = this.applySquadLoses(this.squads.left, fightResults.right);
-        fightResults.right.loses = this.applySquadLoses(this.squads.right, fightResults.left);
-        return fightResults;
+        this.fightResults.left.loses = this.applySquadLoses(this.squads.left, this.fightResults.right);
+        this.fightResults.right.loses = this.applySquadLoses(this.squads.right, this.fightResults.left);
+        return this.fightResults;
     }
 
     private withDamageModifiers(squad: Squad, opponent: Squad): FightResult {
@@ -59,13 +61,17 @@ export abstract class Fight {
 
     private getDamageDebufs(squad: Squad, squadDamage: number, opponent: Squad): SquadProperty<number>[] {
         var debufs: SquadProperty<number>[] = [];
-        if(squad.fatigue >= squad.maxFatigue) {
-            debufs.push({name: "fatigue", value: squadDamage - 1});
-        }
-        if(opponent.totalShields > 0) {
-            debufs.push({name: "shields", value: opponent.totalShields});
-        }
-        return debufs;
+        debufs.push(this.getFatigueDebuf(squad, squadDamage));
+        debufs.push(this.getShieldsDebuf(opponent));
+        return debufs.filter(debuf => debuf.name !== undefined );
+    }
+
+    protected getFatigueDebuf(squad: Squad, squadDamage: number): SquadProperty<number> {
+        return squad.fatigue >= squad.maxFatigue ? {name: "fatigue", value: squadDamage - 1} : {} as SquadProperty<number>;
+    }
+
+    protected getShieldsDebuf(opponent: Squad): SquadProperty<number> {
+        return opponent.totalShields > 0 ? {name: "shields", value: opponent.totalShields} : {} as SquadProperty<number>;
     }
 
     private applySquadLoses(squad: Squad, opponentDamageModifiers: FightResult): SquadProperty<number>[] {
@@ -105,8 +111,13 @@ export abstract class Fight {
         return modifiers.reduce((sum, modifier) => sum + modifier.value, 0);
     }
 
-    next(): Fight {
-        return this;
+    isAnyHealthLoses(): boolean {
+        return this.fightResults!.left.loses!.some(loss => loss.name === 'health')
+            || this.fightResults!.right.loses!.some(loss => loss.name === 'health');
+    }
+
+    getSquads(): Pair<Squad> {
+        return this.squads;
     }
 
     getOutcome(): string {
